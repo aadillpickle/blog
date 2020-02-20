@@ -1,0 +1,565 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Don’t spend your life being a box-checker</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5fc8d198-e3bb-4e67-b81b-44fb04c77a69" class="page sans"><header><h1 class="page-title">Don’t spend your life being a box-checker</h1></header><div class="page-body"><p id="1fbbb41f-38bf-4ff0-aecd-c9ae309b42e1" class="">I was always the perfect little nerd.</p><p id="0b17871f-49c2-4d62-a3d4-c47c4de2d95d" class="">Been in gifted and advanced programs at school since the third grade?</p><p id="17a2f63d-0d57-41b5-9c82-0d5d67bcfbeb" class="">✅ Check.</p><p id="176d8bea-51c6-4f36-bbe3-c49688ed016e" class="">Took advanced math and science classes throughout middle school?</p><p id="05399660-7484-4a4b-a2ca-ce612f5b0972" class="">✅Check.</p><p id="65fda28a-1af0-44cf-8edb-c916bdcd389d" class="">Obsessed with learning to code and make my own robots?</p><p id="6af87f68-9fc2-425b-b3bc-883a22c20455" class="">✅ Check.</p><p id="b0913a31-693c-4627-8942-38ea14e96d38" class="">I was pretty much set on going to university for some CompSci. program and settling for a job sitting at a desk banging my head against a keyboard all day for the rest of my life.</p><p id="a8f1ca18-7d10-46c9-b1e4-1732cc43dca5" class="">That’s success, right?</p><p id="c71f6498-7f84-484e-b845-6307938f987c" class="">It has to be. Right?</p><p id="3a66347b-bf2d-4c7f-b451-d2cffa7f2388" class="">That’s what everyone else does, that’s the path of certainty, that’s what the point of life is — right?</p><p id="0b86b272-e987-480d-98f2-3d97f98731b8" class="">Everyone else follows the exact same path, so why should I do anything different? It’s always been: High school → University → Job → Family (maybe) → Retirement (if you’ve saved up for it) → Death (maybe, I hear there’s some sick longevity research out there now).</p><p id="ed9ef5dc-f5bf-4081-a312-57262f841c8b" class="">But in high school, around grade 11, I got bored with school. Frustrated with math. Sucked at chess. Fascinated with people. Amazed by the fact that I could sit at my laptop for a few hours, tap my keyboard a bunch of times and make the next Instagram. I joined <a href="http://theksociety.com/">TKS</a>. I started working with AI. I went to Silicon Valley for a week.</p><p id="e79c464a-e2b2-4ada-80eb-0c5920145df7" class="">And I learned about Chamath Palihapitiya.</p><p id="2e369abb-dcd6-4bc4-a570-97b897a285d9" class="">And the biggest thing I took away from all of that, especially him:</p><p id="ef5886c4-8cbe-4c18-a874-22648fbcebcb" class="">Stop checking society’s fucking boxes.</p><h1 id="80f8e894-a496-4400-bc09-82f0ecaf7e1e" class="">Chamath’s M.O.</h1><p id="a913f884-db38-447c-8d34-0f58be9179c8" class="">Chamath and I are nothing alike. Well, we might look alike. But other than that, our backgrounds are completely different.</p><p id="c4fa2acb-0082-450d-97cf-b18001fbff75" class="">As for the whole box-checking thing, Chamath refers to people who mindlessly follow the path of certainty as box-checkers. Most of our society does this. People who are at Harvard rather than other universities are there because they’re better box-checkers. They fit the criteria better. But they’re not necessarily smarter; they’re just better <em>box-checkers</em>. Better test-takers or athletes or writers. Not necessarily better innovators or thinkers.</p><p id="4f7204c5-0c84-437b-bbd1-26521697db71" class="">Now, Chamath used to work at Burger King and lived off welfare when he was 14. He went on to become an early senior exec at Facebook with a net worth of 1.2 billion 💸.</p><p id="ef050ce3-2942-452b-b7d1-b4ec58609245" class="">He went from being a BK burger-flipper to a capital- B <em>Billionaire</em>. This guy’s wicked smart.</p><p id="a465e11a-8c24-4f64-8dee-94d44609e681" class="">He’s like one of those Toronto rappers that made it big…if Toronto rappers played professional poker, started VC firms like <a href="https://www.socialcapital.com/">Social Capital</a> and owned the Golden State Warriors (Raps in 4 this year 🙌).</p><p id="b7efb12f-adfc-4881-a5fe-d48537adc9d8" class="">Knowing all this, I see Chamath as someone with super high credibility.</p><p id="ce2acc25-5a88-4f1d-bca4-923acf8d77ed" class="">Another smart person once told me that if a smart person says one thing and a 1000 other dumb people say the opposite, trust the smart person. And if you listen to any of Chamath’s talks, what he says goes against the advice of way more than just 1000 people. For me, his advice just makes sense.</p><p id="1b1e09cf-cfcd-466d-8cbe-7daa3298bb6e" class="">A lot of what Chamath says he prefaces with “I can say this now”, showing that he’s been thoughtful about his advice. His advice is backed up by action. In the business of life, his resume is stacked. He carries a certain believability factor that comes with having done so many things. And what he wants to do now is make and inspire change.</p><blockquote id="abffdbbe-a573-461f-a327-2b1b57590335" class="">“If you talk about where all of the gains, where all of the value will be created over the next 50 years, it’ll be in those hard things. And the reason is because those white spaces are so wide open.”“What is undeniable is that we as a human population will be forced to concentrate because certain parts of the world will get basically subsumed by water. We do not have enough food supplies — these are conclusively known to be true. Yet nobody is really working on a problem. And part of it is because the people won’t have the ambition to try to go after it.The capital markets don’t reward that kind of decision making. But if someone were to solve it, don’t you think they are, in economic terms, a multi-trillionaire? Of course.”“You think food delivery is where the next great fucking breakthrough is going to come from? Like, what a joke! Go and look through Crunchbase and look at all the shitty, useless, idiotic companies that have gotten funded doing garbage like that. Versus climate change. Think about that.”</blockquote><p id="40c1a913-c553-4777-9ee2-0f6d67e49f61" class="">Take a second to internalize that. “Nobody is really working on a problem.” This was a wakeup call for me: I can’t rely on anyone else to solve the world’s most important problems — it has to be me. I have to put myself in a position to make a change. So here’s what I learned from Chamath on how to get me there.</p><ol id="fef381f6-b89c-4ee4-b1b7-db1a0d05f32b" class="numbered-list" start="1"><li>You’re not invincible.</li></ol><ol id="24339e54-eea2-49a3-8bba-e5efcbf7d842" class="numbered-list" start="2"><li>Figure yourself out.</li></ol><ol id="608535b6-06d8-49e6-9d43-126b4755c389" class="numbered-list" start="3"><li>Just do it.</li></ol><h1 id="3224473b-860c-4052-bf8e-c37203248014" class="">I’m not invincible</h1><p id="5a929a0a-f339-4a61-8d7b-9af16fc3e7e6" class="">Being right is overrated — you’re either learning or you’re not.</p><p id="cf155492-2617-4685-90b6-7a661502bd2c" class="">Chamath pretty much says it himself:</p><blockquote id="976fa44a-fa6b-4279-a3f7-7e78504afd1a" class="">“The single biggest thing that people have to get comfortable with is you’re learning. And you either care about that or you don’t.”</blockquote><p id="712ce24c-4e66-4cc5-8576-492e366aaa0c" class="">It’s so empowering to say ‘I don’t know’. There’s a certain level of confidence and openness behind that statement. If you’re a know-it-all, you’re not learning. For me, it’s getting rid of my illusions of competence and broadening my circle so I can focus on getting the right answer even if I’m initially wrong. Even right here, I’m open to learning from Chamath and his experiences even though I initially disagreed with some of his views. 🔑: It would be arrogant of me to think I know better than one of the smartest people in the world. I know I know nothing (s/o to my boy Socrates).</p><p id="5bb696c0-5c71-4f87-94ef-ac7166e72fb7" class="">Chamath claims most successful people are deeply insecure, himself included. He notices when his life is out of balance when he brings up negative self-talk and starts treating loved ones badly. Recently, he’s been through a divorce with his university sweetheart and had his partners at Social Capital leave. He’s astronomically far from invincible. And he knows it.</p><p id="0cea0ccd-e1f5-4e02-b254-6a1bf85feaa6" class="">But I’m luckier than him. I have the ability to observe successful, high-functioning people like Chamath, Khosla, Musk, etc. I can just copy all the good shit they do while avoiding all the bad shit.</p><p id="d9b62fe6-68cd-437c-ba50-1f2640d4123e" class="">Shedding my ignorance, just saying ‘I don’t know’ and copying smart people literally gives me a superpower. Time to use it for good.</p><h1 id="504b34a2-8bcf-4ad5-8381-4d6c3ea9050c" class="">Figure myself out</h1><p id="8d605d0b-4a4d-44f9-863d-9db56b67f1b2" class="">If I’m not invincible, then what am I? I’ve gone through 16 years of life. At least 12 of those were conscious. Then 3 years ago I kinda started thinking for myself. But not really because I still have no idea who I am. I just feel kind of lost.</p><p id="ab26f50b-13d5-41a2-b2e1-6477e67f5bbd" class="">I don’t have a personal philosophy. I don’t know what drives me. I have this arbitrary goal of solving some of the world’s biggest problems or making an impact or doing something meaningful with my life. But what the fuck does that even mean?</p><p id="f75a7d8b-eae5-41ab-86fa-9e2cb976b79b" class="">If you’re also as confused as I am, Chamath suggests a few things we can do differently:</p><ol id="7b6c4298-e867-43bf-83e3-6e92e04db6b8" class="numbered-list" start="1"><li>Feel unease with your current self and want to improve. Actively ask questions and learn more. Simple.</li></ol><ol id="0d8f50ef-1d7c-43b8-b4a9-4a9f80a30fea" class="numbered-list" start="2"><li>Break social media dopamine feedback loops. We are bred to feel inadequate by scrolling through people’s highlight reels without getting to see the rest of their horror movie. Everyone markets that they’re smarter than you. Or prettier. Or richer. Watching people flex on the gram will get you nowhere. Being alone clarifies what’s important to you. Go for a walk.</li></ol><ol id="ec9a4e10-1900-4799-9b17-d9ebc107d583" class="numbered-list" start="3"><li>Get used to being spiky. If you want to solve hard problems, you’re going to have to go against the path of certainty — the path of being sheltered and docile. Only <a href="https://www.goodreads.com/quotes/1036543-reasonable-people-adapt-themselves-to-the-world-unreasonable-people-attempt">unreasonable people</a> get results (s/o to my other boy <a href="https://twitter.com/search?q=vinod%20khosla&amp;src=typd">Vinod</a>).</li></ol><p id="1c5f46dd-7298-4e89-92bb-96511f21ae7a" class=""><em>Side note on being spiky: Chamath is one of the most liberal and proficient users of the word ‘fuck’ I’ve ever had the joy of listening to. Listen to </em><a href="https://www.youtube.com/watch?v=PMotykw0SIk&amp;t=1606s"><em>this talk</em></a><em> (on 2x speed) and do 10 pushups every time he says it. Guarantee you’ll be jacked 30 minutes in.</em></p><p id="6b5f9064-1cbe-484d-8c6f-89859f472858" class="">If you wanted to know what Chamath figures is success for himself, he mentioned 3 things (see a pattern here?):</p><ul id="fefb9b26-8a0b-43f1-a653-3ac9c21b659e" class="bulleted-list"><li>professional accomplishment</li></ul><ul id="7db986b4-c095-4109-b890-ea52920fb5c9" class="bulleted-list"><li>social capital — the feeling of belonging with the people around you</li></ul><ul id="132ae285-0136-4092-9d5e-d833a4491a7a" class="bulleted-list"><li>deep, profound relationships (used to call his coworkers his friends but they couldn’t really be friends because he was paying them)</li></ul><p id="e5a4bf3b-b5a0-4b8b-b741-c566bcab0611" class="">I’m currently on a hiatus from social media and try to spend 5 minutes before bed internalizing what I learned during the day. All in hope to better know MYself (almost another s/o to Socrates, just missed it).</p><h1 id="9636a1bb-6c3d-4349-ad97-85ba45690bec" class="">Just do it</h1><p id="fd12d43a-b962-435c-83eb-94c9a7b46ba1" class="">Nike might’ve said it first, but Chamath said it best.</p><p id="2195f2ba-a899-46fd-92f2-8f25d2a3748a" class="">Huge theme I’ve picked up from Chamath and other smart people is they’re contrarian. Unconventional success takes an unconventional path (giant s/o to my mentor Nadeem) — I can’t expect different results I’m just doing the same thing as everyone else. And I can’t expect shit if I’m not doing anything at all. And one of the reasons I used to be afraid of doing things was failure.</p><p id="a9625065-8be4-4f3f-bca1-9469a111edfa" class="">So what does Chamath almighty have to say about this?</p><blockquote id="d01b0442-637a-4bef-8d55-19ba351b6056" class="">“If you’re working on something that’s really hard, you have to fail a lot.Because otherwise, you’re just making a bunch of silly, risk-less decisions that you know are probably bound to be right. But that just means you’re going to fail anyway.”“Think about people who win a Nobel Prize. What do you think their process is? They’re creating something foundational in the world that gets recognized 20–30 years later. But they are fundamentally people who have to orient their minds around failure, failure, failure. Because they’re swinging for the fences each time they try to run some experiment. And I think working on hard problems basically requires that mentality.”</blockquote><p id="5713265f-6d7f-4a55-84d7-ed0147764cca" class="">I try to orient my mind around failure now. To prove to myself that you can start something and see it through.</p><p id="90b19be8-ad89-48de-9a87-58a529ec2280" class="">He even outlines a process for actually getting shit done:</p><p id="86d73664-9e9d-40a6-a915-f9b50e6569c0" class="">Create a plan → break it down → finish it → be proud of it → don’t care about people judging it.</p><p id="6fdfa54b-bfc4-4b22-921e-886ede5bd313" class="">Now I can take this and amplify it to work on a hard problem for the next 10 years and continuously iterate. No matter how much I get judged or ridiculed. For big problems, it’s not about failing fast — that approach doesn’t work for big problems that actually matter, only in scooter startups.</p><p id="33629ba5-c232-48ea-8a6e-022cd9f097a1" class="">For important things, it’s about failing, getting back up, getting bitch-slapped by a million VCs and finally finding an answer. It’s about getting so angry that a problem exists that you can’t picture handing off a world in which it exists to your grandkids. So you HAVE to fix it.</p><p id="46b8ae7f-407f-4271-9bdd-7c9d7de232fc" class="">I’m still slowly figuring out how to do more and more with my days and actually GSD (get shit done). But whether it’s starting a new AI project (reinforcement learning is a pain) or trying to talk to strangers at events where I’m almost 5 to 20 years younger than everyone else, I’d consider the real failure to not even make an attempt at all.</p><p id="ebc228e9-54ff-426a-9a70-c7efe423822d" class="">My personal takeaway? It’s better to try to fail than to fail to try.</p><h1 id="01f5fbe8-da2b-4133-bcfb-952f0b160606" class="">Here’s what YOU should do to stop checking boxes:</h1><ul id="1da59619-57a2-440d-b133-a92a29632ab2" class="bulleted-list"><li>Say ‘I don’t know’ so you can start learning</li></ul><ul id="b32a1089-7f12-4560-b2ed-6a1a806113e1" class="bulleted-list"><li>Copy the habits of smart, high-functioning people. Start with these.</li></ul><ul id="de5320c1-35ed-4010-b5b0-4e891783df23" class="bulleted-list"><li>Get off social media and spend time alone, take a walk</li></ul><ul id="0276daa7-1cab-455d-ba34-3ba0ab029ea5" class="bulleted-list"><li>Be an activator, ask questions, do things most people don’t do</li></ul><ul id="585ad8ad-edfb-4a49-8b8b-bdad43befb08" class="bulleted-list"><li>Just do it ✔️ — get shit done (GSD), work on hard problems and fail often</li></ul><p id="a054c049-8814-40ed-b901-af4ef3fc36f5" class=""><a href="javascript:void(0);"><strong>Upvote 0</strong></a>  <strong>Like this post?</strong> <a href="javascript:void(0)">Subscribe by email »</a> 0 responsesYour NameEmail<a href="javascript:void(0)">Add Website URL »</a>Your Comment Notify me by email when new comments are added</p><p id="d70b7220-4904-446b-987c-225d6f92d377" class="">Posted <a href="https://blog.aadilali.com/dont-spend-your-life-being-a-box-checker">3 months ago</a>December 4, 2019 at 6:44 PM<strong>1 view</strong></p></div></article></body></html>
