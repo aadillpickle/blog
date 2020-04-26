@@ -1,0 +1,630 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>A pretty good guide for dropshipping on Shopify</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d250285c-4c88-4cd9-a3e2-e38aba538b46" class="page sans"><header><h1 class="page-title">A pretty good guide for dropshipping on Shopify</h1></header><div class="page-body"><nav id="01f8b16b-9c30-41fd-bf23-b9d2eb8588d0" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2d05336c-4a83-4982-9a52-3b2dd0d0cd6c">0. Preface</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f9dcb8d5-aa01-42ef-aac1-2769a3d901bf">1. Pick a product area</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#50654099-2b03-4cfb-8c1c-f592aa93b671">2. Make a legit looking Shopify store + use apps</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5c40c967-8977-497d-b0d2-04ca23e3162e">3. Setting up Google Adwords</a></div></nav><h3 id="2d05336c-4a83-4982-9a52-3b2dd0d0cd6c" class="">0. Preface</h3><p id="ec6604cd-651a-4763-b7e3-5a1a9155dbd6" class=""><em>Dropshipping is the act of selling goods straight from suppliers to customers without keeping any of your own inventory. You sell goods to consumers at a higher price than what you buy them for, and only order the product from a cheap online marketplace when you have an order. It&#x27;s not the most ethical way of starting a business but is ideal for going from $0 to a livable income since there&#x27;s almost no fixed costs. As long as you&#x27;re making more than $30 a month to pay for shopify and have a reasonable ads budget, you&#x27;re pocketing money on every sale.</em></p><p id="66df2dbb-8fce-4bec-a712-3d5635144b01" class=""><em>To start, you&#x27;ll need to set up a store on Shopify and add the Oberlo app. This app will let you order products from AliExpress, a marketplace where suppliers in China will list inexpensive items that you will be selling in your store. You will essentially act as a middleman - the essential skills that will dictate your success are how well you can market, design a website and problem solve.</em></p><h3 id="f9dcb8d5-aa01-42ef-aac1-2769a3d901bf" class="">1. Pick a product area</h3><p id="246a9e42-b1e6-4601-a066-b64cf68c1b94" class="">Ideal products: Something niche, trendy, has a high profit margin with low competition </p><p id="9c37a72a-536e-40ca-a791-e3ef0bb34e2e" class="">Here&#x27;s the criteria for picking one in order of importance (best if they fit all but popularity/hype matters above all else):</p><ul id="5982f5f8-1064-459e-a603-9bfaa1bbd96d" class="bulleted-list"><li>Monthly google searches for the product (this is a proxy for popularity)</li></ul><ul id="edab36c2-0dca-40bf-8078-c50b7aefc586" class="bulleted-list"><li>Few/no websites pop up for the product when you google it (proxy for competition)</li></ul><ul id="5edf271c-ea5e-48d3-acad-e9ecd2a2cac0" class="bulleted-list"><li>There&#x27;s lots of social media attention related to the product - its niche trending on reddit/instagram/twitter/in the news (proxy for trendy)<ul id="533818b3-b2bc-4445-beb0-22aa6e4f8302" class="bulleted-list"><li>Example: People are quarantined and making banana bread has suddenly become really popular → people will be more likely to by loaf pans</li></ul></li></ul><ul id="94bfc68a-0f4a-4d2d-95db-788f82d8270c" class="bulleted-list"><li>There are facebook groups about it (proxy for niche + old people are much more likely to buy things)</li></ul><ul id="609f2220-5432-4859-914a-f80f3494ab5c" class="bulleted-list"><li>The product is too expensive and you can sell it for much cheaper (a caveat is if the product is really expensive it&#x27;s still possible to sell it as long as the margins are high enough - you&#x27;ll have to sell less to come out ahead)</li></ul><ul id="f84002cb-f8fa-4539-b33d-f33b37ec0b71" class="bulleted-list"><li>The websites selling the product don&#x27;t look legit (proxy for competition)</li></ul><p id="6355af40-180c-4c79-a750-1ff3b01d8f78" class="">
+</p><p id="f92dfea0-4531-4c08-b52a-c00336674b8e" class="">Or, if you want, make custom designs (or hire someone on <a href="https://www.fiverr.com/s2/ae613341f1">Fiverr)</a> and sell apparel that relates to a niche (ex. <a href="https://www.youtube.com/watch?v=1O6feWOsbLs">Selling custom socks using Print on Demand</a>). To me, this is much harder to grow but has much more potential to become a long-term source of income. Also, Print on Demand allows you to make custom apparel only when you get orders which means you&#x27;re never spending money out of pocket. Only downside is that, in my experience, it&#x27;s more expensive than dropshipping.</p><p id="c9131f3f-a302-46d6-aa0d-0280519eea0c" class="">
+</p><p id="534461d0-4d74-4b5d-a9d5-c478c07acb04" class="">If you&#x27;re selling apparel, it&#x27;s often cheaper to contact a supplier to use a supplier on Aliexpress rather than print on demand:</p><ul id="de6fce7b-9150-4395-9e8d-969373dd98a3" class="bulleted-list"><li>To find a supplier, message a bunch of high rated vendors with lots of orders and ask them if they could do screen-printing </li></ul><ul id="ce5ee90c-d9b0-405c-8566-68fceb49f4b5" class="bulleted-list"><li>Remember to haggle them and pretend you&#x27;re a big company and continuously &quot;talk to your associates&quot;</li></ul><p id="90bce890-aea2-430d-b4d0-781dd9c81ba2" class="">
+</p><p id="a796fc82-25b4-4b0f-ad82-ddb7246e0b99" class="">Choosing the right products is the most important part of this process. You can even start a store with just one product</p><p id="11919689-9111-4fc4-b40c-b1fa987c5d4f" class="">
+</p><p id="b6d443b4-c797-44f7-ad37-ac2afad52347" class="">Resources:</p><ul id="9293435a-c2a4-4bd7-a3dd-455f11a47c55" class="bulleted-list"><li>Use <a href="https://explodingtopics.com/">Exploding Topics</a> to find a niche</li></ul><ul id="237ddfcf-c38b-4fb4-bc42-973ef1c9fef7" class="bulleted-list"><li>Use Google&#x27;s <a href="https://ads.google.com/intl/en_ca/home/tools/keyword-planner/">Keyword Planner</a> to get insights on how often your product is searched for - Google Ads is innately targeted to high intend buyers so it&#x27;s almost always a good (and relatively cheap) idea to advertise with them</li></ul><p id="dec53bec-4254-46da-a8af-131ab7d3e65e" class="">
+</p><h3 id="50654099-2b03-4cfb-8c1c-f592aa93b671" class="">2. Make a legit looking Shopify store + use apps</h3><ul id="48dd8947-0de9-462b-a077-e7413ae61a01" class="toggle"><li><details open=""><summary>Sample Design</summary><figure id="b4bab893-4360-4f4a-b268-e05fae186fa8" class="image"><a href="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/storeDesign.png"><img style="width:2880px" src="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/storeDesign.png"/></a></figure></details></li></ul><p id="77fbe80c-8d2d-4e94-8418-c6fbf509d387" class="">
+</p><ul id="68217787-aa75-4b8b-b826-da8bb4ab99bf" class="bulleted-list"><li>Use the minimalist theme on Shopify - it&#x27;s free and gets the job done</li></ul><ul id="56263deb-7045-489c-8b78-af4329fd503b" class="bulleted-list"><li>Make sure to enable Google Analytics and a Facebook Pixel at launch - it&#x27;ll help if you want to do Google or Facebook ads in the future</li></ul><ul id="f8ee3d43-4dd0-4121-955e-8087eeedb5f7" class="bulleted-list"><li>Startup philosophy applies here: launch early and iterate so google ads has time to optimize - it&#x27;s easier to get your sales from warm traffic</li></ul><ul id="9bdfef56-3b28-4746-a71c-00b7ebedf6b4" class="bulleted-list"><li>For dropshipping, get <a href="https://apps.shopify.com/oberlo">Oberlo</a> and get the chrome extension and press the little blue circle when viewing an Aliexpress product to add it to your import list. When adding products, remember to change product titles, descriptions and photos - you don&#x27;t want to use the default ones from AliExpress.<ul id="e8f17b4e-2e92-4929-86ce-9581019d6093" class="bulleted-list"><li>Note on Oberlo premium: worth it for using <a href="http://admitad.com">Admitad</a> (get rebates for dropshipping from Aliexpress), bulk order fulfillment to save you time and sometimes order tracking (most of the time your suppliers tracking links wont work though)</li></ul></li></ul><ul id="86935828-5271-482c-93ad-d90dae21f266" class="bulleted-list"><li>Get <a href="https://apps.shopify.com/wheelio-first-interactive-exit-intent-pop-up">Wheelio</a> — worth every penny. It might not look legit but works like magic for converting people. Just make sure you label the prizes as really enticing like 50% off your entire order but only set it to give 10% off their order.</li></ul><ul id="37b83df3-1e07-43cb-aed3-4433770e3901" class="bulleted-list"><li>Customize your order confirmation email and abandoned checkout email with <a href="https://www.klaviyo.com/">Klaviyo</a> (the hack is to send yourself a test email then copy the html into Shopify directly and not pay for it) and make them look more legit. The same thing can also be done with Mailchimp - choose whichever one&#x27;s design you like better<ul id="c0e2a3a1-a379-40e3-aa5b-d356c6840cff" class="bulleted-list"><li>With Mailchimp, you can send email marketing campaigns for free to contact lists with less than 2000 members. Email marketing has a relatively high conversion rate so it&#x27;s worth doing IMO + with wheelio, everyone who </li></ul></li></ul><ul id="13ca9b45-3159-4ebd-aa0a-8a513b4f233b" class="bulleted-list"><li>Get a custom email to look more legit - either pay Google $8 a month or get one for free from <a href="http://mail.zoho.com">mail.zoho.com</a></li></ul><ul id="30b3f9fc-f841-43eb-a4b4-8f671a213c39" class="bulleted-list"><li>Other things you can play around with are but aren&#x27;t as impactful IMO:<ul id="37f1cb47-7373-4d49-81b0-1d7d8c182dc3" class="bulleted-list"><li><a href="https://apps.shopify.com/seo-booster?surface_detail=seo&amp;surface_inter_position=1&amp;surface_intra_position=1&amp;surface_type=search">SEO Booster</a> - I didn&#x27;t notice a tangible difference in my SEO but it doesn&#x27;t really hurt to have it, especially since it&#x27;s free. Just keep in mind that every Shopify app you have lowers your page speed which could make customers leave your site.</li></ul><ul id="1c65bbf4-5e12-41d2-97c0-075a3475432d" class="bulleted-list"><li><a href="https://apps.shopify.com/reconvert?surface_detail=reconvert&amp;surface_inter_position=1&amp;surface_intra_position=1&amp;surface_type=search">ReConvert</a> - my logic for not using it is that I don&#x27;t think people who just bought something would want to buy again right after. But it couldn&#x27;t hurt since you get 30 days for free so use your judgement.</li></ul><ul id="62492e4e-e145-451e-b7e0-2be5338b4a94" class="bulleted-list"><li><a href="http://hotjar.com">Hotjar</a> - I mainly used it for determining where to place my products/seeing what products to keep on the store. It basically just told me that people like hoodies and mostly click on the products that are ordered first, so I didn&#x27;t use it after the 14 day trial.</li></ul></li></ul><p id="fcd5540d-35ac-425f-abc1-4c6949a60264" class="">
+</p><h3 id="5c40c967-8977-497d-b0d2-04ca23e3162e" class="">3. Setting up Google Adwords</h3><p id="3b0b8733-da14-485b-b40b-4bbc0574c52c" class="">Set up a campaign for clicks targeting Canada, USA, UK, Ireland, Australia and New Zealand and use your brain to think of relevant keywords, set your max CPC. (cost per click) to 0.21 to start out and gradually increase if you want to 0.24, 0.27, 0.31. If you want, do a daily budget of around 40 dollars and increase that too as you scale.</p><p id="274ad8d3-c840-449e-b1fc-e49c6c76c1c4" class=""><em>Note: Anything that&#x27;s blacked out in the following examples is an identifier to my store. Replace them with store specific keywords of your own.</em></p><ul id="b5ed3eb4-3cce-49de-80b8-b704661b9643" class="bulleted-list"><li>have multiple ads/styles of ad copy and use sitelink and callout extensions like this:</li></ul><figure id="40df705c-a65b-482a-a821-d5cb2bd9f256" class="image"><a href="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/adsextensions.png"><img style="width:772px" src="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/adsextensions.png"/></a></figure><ul id="234e1ee7-c9c1-49c1-8037-ff5fb5bbbfb4" class="bulleted-list"><li>With multiple ads. google will show the best/most relevant ones anyway. It&#x27;s just better to have more ads to see what works. Here&#x27;s my ad copy, try it and see what your CTRs look like:</li></ul><figure id="afca0597-0d23-4fd0-a30c-9f09ca691fb7" class="image"><a href="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/adcopy.png"><img style="width:760px" src="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/adcopy.png"/></a></figure><ul id="6d2b550f-b0c3-4421-a5b7-2405e428800a" class="bulleted-list"><li>Put square brackets[] around your keywords — in most cases, this will lead to higher CTR (click through rates) and more conversions, don&#x27;t use broad match because it&#x27;s <em>extremely </em>broad, just look at the square brackets vs no brackets (only the first keyword has square brackets): </li></ul><figure id="a46a6253-0cbd-4c9e-b433-2265497f8958" class="image"><a href="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/keyword.png"><img style="width:966px" src="A%20pretty%20good%20guide%20for%20dropshipping%20on%20Shopify/keyword.png"/></a></figure><ul id="9a4e2800-4399-445e-ad36-dc331082ce08" class="bulleted-list"><li>Higher CTR generally means more conversions since the keyword is more targeted to people likely to purchase which google determines based on what they searched. Broad search is pretty much a catch-all that matches any of the words in your keyword.</li></ul><ul id="06604825-01e7-4014-91ad-835c07babfd8" class="bulleted-list"><li>A pro tip is to do all your keywords in both [] and &quot;&quot; and google will figure out which are the best. 80/20 rule applies and 80% of your sales will come from keywords with square brackets.</li></ul><ul id="9466734f-fcd2-4256-a4df-92d46083c76b" class="bulleted-list"><li>Call up google support and ask them to help you set up conversion tracking ASAP (don&#x27;t try to figure it out yourself, you&#x27;ll just be wasting your time) then switch to a CPA (cost per acquisition) strategy after collecting about 20-30 days of conversion data. This should lead to more conversions at less cost per conversion ideally.<ul id="3c18e0ee-063a-4cac-a131-a12f10809fd6" class="bulleted-list"><li>Call 888-987-0545 ext. 30451 for this - this support rep got it done in 30 mins compared to 2.5 hours someone else did for me.</li></ul></li></ul><ul id="d17f7441-306f-4c7e-b2c6-5ce57956cddc" class="bulleted-list"><li>There&#x27;s advanced stuff you can do with testing out different ad groups with different demographics this should tide you over with minimal effort. Getting Google Ads properly set up like I&#x27;ve outlined will get you well on your way.</li></ul><p id="f4159c63-cb3a-4a10-921d-069eae5ced63" class="">
+</p><p id="686d1cdf-64f1-4c05-badc-58c9fe73c6c3" class=""><em>Made with 🖤 by </em><a href="https://aadilali.com"><em>Aadil</em></a></p></div></article></body></html>
