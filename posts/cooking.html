@@ -1,0 +1,641 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cooking</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+iframe {
+   display: block;
+   margin: 0 auto;
+}
+
+</style></head><body><a href="https://blog.aadilali.com"><div style="width: 100%"><img src="./home.svg" style = "float: right"/></div></a><article id="e82a3969-9dbf-4a22-9e29-fb83846d781e" class="page sans"><header><h1 class="page-title">Cooking</h1></header><div class="page-body"><nav id="04a54924-9e0b-4214-96ed-d5661f975e9d" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c9c9d536-c794-400c-9da5-5fb4cb7b7778">1. How I started cooking</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fc9574c5-84e2-4ce7-813d-8d418aac9ac6">2. Youtube channels to learn from</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c434b611-0742-4141-92a7-afc6f5f78e88">3. Recipes I&#x27;ve made</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#89e70bf2-cc68-4370-83f3-eaf246706989">Banana Bread</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f28efd9d-6c55-499d-8759-be6338448ba2">Fresh Pasta (No-Roller)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#03dd8a1f-8a54-4c0b-9f17-23879905d855">Chicken Pot Pie</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9e36c9df-bd80-4169-a849-423dea586280">Shakshuka</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#03f8b104-f206-44b7-932a-547278be2073">Pizza</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c4eb4006-eb9d-4ef6-8c3d-daddd0a916db">Pizza Bread</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#aead9888-91fe-48f3-a487-afa99c49db79">Egg Tarts</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#71365731-5edf-42d9-91b7-0186215d5bd4">Chocolate Chip Cookies</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#33eec476-8ccd-4f23-894a-e848e326f77f">Aglio e Olio (Fresh Pasta Pt. 2)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d7ba6a6c-2b27-4afc-ac68-2c1e6e979fca">Spaghetti and Meatballs</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#04b35097-576a-43a3-983e-fe6907175176">&quot;Sloppy&quot; Gyros</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#903fc379-476e-4a54-ace4-3f2df5e2ebb9">Apple Galette (Pie)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e7d6e1f1-46aa-4315-9168-3d6f9d7e2473">Pineapple Cake</a></div></nav><h2 id="c9c9d536-c794-400c-9da5-5fb4cb7b7778" class="">1. How I started cooking</h2><p id="02849ee1-0134-455c-8cf1-a1598b1656bc" class="">During the Covid-19 induced quarantine, I reignited my interest in cooking that came from watching the food network constantly and adding eggs to instant ramen as a kid.</p><p id="5ec80d6e-d443-4003-8fc2-0b2c9052ef09" class="">
+</p><p id="cbf68423-9e5b-4eca-8201-b2e5233d1a9c" class="">I feel like I have a better intuition about how to handle food. I think how programming languages become much easier to learn once you&#x27;ve learned one in and out rings true for cooking as well - my hands and eyes and nose just move differently than they did months ago and I&#x27;m much more confident taking up &quot;hard&quot; dishes (pasta, macarons).</p><p id="9858be2e-0370-4115-a19f-5f39ae1572ec" class="">
+</p><p id="0b7ed217-db1b-4aea-bae7-4d7f698a28a7" class="">Second to writing code, food is the closest thing I&#x27;ve found to magic. Taking something that would make you sick if you ate it as is and turning into something that really *hits the spot* sparks a sense of wonder.</p><p id="9a702899-055d-46c2-872e-4bbf2c88bdad" class="">
+</p><p id="6ab13cd1-a2f0-4cdd-82d6-a2ac9eb61fe4" class="">Even before I started cooking, I always enjoyed eating. I think that&#x27;s one of the foundational skills to being a great chef - making food that you like. My mom is a housewife/part-time medical secretary and for her, cooking was just part of the job. She never tastes her food and only pulls from a set of tried and true recipes for lunch and dinner. Any time she has to make a different quantity of the same recipe, it doesn&#x27;t turn out as good (she doesn&#x27;t measure anything but makes everything via muscle memory).</p><p id="0b6918e0-4df1-4d64-b144-6c4067eadfd6" class="">
+</p><p id="b0cadcc3-8559-486f-bad8-ea04ef104644" class="">To cook good, somewhat original food, it&#x27;s vital to have a palate that lets you recognize what&#x27;s good. And, if it&#x27;s not good, a palate that tells you what&#x27;s missing. I used to think cooking was easy because it was just about following a recipe. Since then, I&#x27;ve realized it&#x27;s all about using your palate to adjust and evolve your dishes. This is what Massimo Bottura (executive chef at a 3-Michelin-star restaurant in Italy) <a href="https://www.masterclass.com/classes/massimo-bottura-teaches-modern-italian-cooking/chapters/bonus-tasting-demonstration">advocates in his masterclass - trusting your palate over tradition/recipies.</a> Which is also why he makes <a href="https://www.youtube.com/watch?v=adyRuV2eJlM">pesto with breadcrumbs instead of pine nuts</a>. </p><p id="2921e8af-4212-427c-90b0-16ee14ed3f4d" class="">
+</p><p id="cbe96ee5-42a2-4cd5-bc93-4e9d1340cd01" class="">For lots of people, food is just for sustenance. Which totally works - a year ago I&#x27;d forget to eat because I was occupied and wished Soylent was legal in Canada so I could waste less time on meals. Now, I find cooking therapeutic and eating incredibly satisfying and I&#x27;m sure I can get good food that fulfills my dietary needs without eating out or spending hours in the kitchen. <a href="https://www.youtube.com/watch?v=gYy9Qj3HJls">Even chicken and rice meal prep can be improved with a little extra effort.</a></p><p id="b3489c51-0be9-4b46-80e5-826f3c15f8d4" class="">
+</p><h2 id="fc9574c5-84e2-4ce7-813d-8d418aac9ac6" class="">2. Youtube channels to learn from</h2><p id="44301922-696b-4759-991d-e6f9fde21aa0" class="">If you&#x27;re interested in learning, my favorite teachers have been the following YouTube channels:</p><ol id="44d8a2d0-e3a8-4907-af06-0c6ca387f86d" class="numbered-list" start="1"><li><a href="https://www.youtube.com/user/aragusea">Adam Ragusea</a> - I&#x27;ve seen all of his videos and most of my recipies come from him. He&#x27;s the epitome of a home cook and all of his recipes are versatile and approachable. I&#x27;m also way too invested in the meme culture surrounding him like how he always uses white wine in everything and seasons his cutting board, not his steak<ul id="42ba179b-c7ba-4786-8d7e-560a7f6fe6e8" class="bulleted-list"><li>My fav. recipe: <a href="https://www.youtube.com/watch?v=IbgpNZfi6Xo">Chicken Pot Pie</a></li></ul></li></ol><ol id="e9d1e1b7-963d-427f-8554-a5d91da481d1" class="numbered-list" start="2"><li><a href="https://www.youtube.com/user/bgfilms">Binging with Babish</a> - He recreates food from movies and TV but also has an educational series called <a href="https://www.youtube.com/playlist?list=PLopY4n17t8RBuyIohlCY9G8sbyXrdEJls">Basics with Babish</a> which is *chef&#x27;s kiss*.<ul id="df820821-e426-4ee9-92b7-967b39b48c2c" class="bulleted-list"><li>My fav. recipe: <a href="https://www.youtube.com/watch?v=F2ENkOF3fMQ&amp;t=196s">Egg Tarts</a></li></ul></li></ol><ol id="34175ee9-ca24-4258-b2a2-6788ebcaaa6f" class="numbered-list" start="3"><li><a href="https://www.youtube.com/channel/UCSuT9FSddzI6W5Bij9XwtmA">Internet Shaquille</a> - He&#x27;s like Adam Ragusea but weirder and less professional - still has good recipes/tricks but not every video is something you&#x27;d make at home.<ul id="ace1b9bb-2cf7-400f-af31-15b08bb5345a" class="bulleted-list"><li>My fav. recipe: <a href="https://www.youtube.com/watch?v=16adnCof_xA">Scrambled Eggs</a> </li></ul></li></ol><ol id="79bee068-006c-4350-94de-3b9a72354441" class="numbered-list" start="4"><li><a href="https://www.youtube.com/channel/UCbpMy0Fg74eXXkvxJrtEn3w">Bon Appetit</a> - All their content is about cooking but it&#x27;s like a reality TV show and it&#x27;s entertaining because I&#x27;m so invested in the chefs/characters and their relationships.<ul id="e4829608-7f78-4feb-b97a-d4a59c6e9edb" class="bulleted-list"><li>My fav. recipe: <a href="https://www.youtube.com/watch?v=uXAuzS8V9AY&amp;t=787s">Banana Bread</a></li></ul><p id="89738e4a-cfa6-4056-b968-01e13ec76219" class="">
+</p></li></ol><h2 id="c434b611-0742-4141-92a7-afc6f5f78e88" class="">3. Recipes I&#x27;ve made</h2><h3 id="89e70bf2-cc68-4370-83f3-eaf246706989" class="">Banana Bread</h3><p id="2f2597e9-8b5e-44f4-b328-f5cd1ccefb86" class=""><a href="https://youtu.be/uXAuzS8V9AY">Recipe - Bon Appetit</a></p><div id="14357b7f-8996-4e78-88ba-195711a02fbc" class="column-list"><div id="614dff64-a005-4fab-8bb9-787a37d0a9a5" style="width:56.25%" class="column"><figure id="a3cd1076-0400-4f65-9686-f4261e24dd36" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0668.jpg"><img style="width:2664px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0668.jpg"/></a><figcaption>1st time</figcaption></figure><p id="efd3692c-298d-43c7-a05b-785724d819ce" class="">
+</p></div><div id="bdd25797-3c5d-421b-8162-7fff8d1baff9" style="width:43.75%" class="column"><figure id="62a89b87-562e-4880-9ccb-0771cb79b9ec" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/7BD21598-5664-4A0F-A3FE-44F1EAB475DE.jpg"><img style="width:240px" src="Cooking%20a3cd107604004f659686f4261e24dd36/7BD21598-5664-4A0F-A3FE-44F1EAB475DE.jpg"/></a><figcaption>4th time</figcaption></figure></div></div><ul id="668ed24f-ee53-4087-9f89-2db29de3ccd8" class="bulleted-list"><li>best when your bananas are falling apart mushy</li></ul><ul id="b71d6358-e6e4-4748-87a6-25bea206ac0a" class="bulleted-list"><li>add your baking soda before your flour (or mix them together first but why waste the extra dish?), I messed this up twice and it didn&#x27;t rise properly</li></ul><ul id="81c54645-b7ec-493c-baa7-c887197be5bb" class="bulleted-list"><li>hand mixer works just fine here, I switch to a spatula after creaming the butter and sugar then fold in the flour and bananas</li></ul><ul id="5de3c3aa-4525-4fbd-aeef-7246fd8d2bd6" class="bulleted-list"><li>adding walnuts + some chopped chocolate is, I don&#x27;t do sugar on top like in the video</li></ul><h3 id="f28efd9d-6c55-499d-8759-be6338448ba2" class="">Fresh Pasta (No-Roller)</h3><p id="c5fde4ee-c27c-4085-834d-8785ab3e459f" class=""><a href="https://youtu.be/VmJcwc5UBW8">Recipe - Adam Ragusea</a></p><div id="af8fbe67-9cc7-408a-bd74-3be04fa8de21" class="column-list"><div id="29c136a7-d12d-447a-ae7d-6b46c209dfab" style="width:50%" class="column"><figure id="59273a63-6935-4c2f-acda-f74f65cc3234" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/104423443_3321822204518483_8210819091659160753_n.jpg"><img style="width:828px" src="Cooking%20a3cd107604004f659686f4261e24dd36/104423443_3321822204518483_8210819091659160753_n.jpg"/></a></figure></div><div id="639f847b-743a-4a5c-aaec-52a23e3eb5b6" style="width:50%" class="column"><figure id="0f128c61-7798-45e4-8a70-fc66793659fe" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1012.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1012.jpg"/></a><figcaption>I made a pot for my family - they liked it so much they asked for another pot</figcaption></figure></div></div><ul id="6f411f0d-edac-4337-b6f4-2b9cf19ec9b2" class="bulleted-list"><li>I added chicken to make it more filling and subbed fennel for onion</li></ul><ul id="dcd26e90-5f42-49d0-9c13-03cbaea5a861" class="bulleted-list"><li>Rolling out fresh pasta is really hard - this way just requires cutting </li></ul><ul id="702eb9f7-e96b-454c-83a7-7691d3d64ca4" class="bulleted-list"><li>Fresh pasta is really something else this 10x better than the boxed stuff but I wouldn&#x27;t do this again unless I had someone to impress </li></ul><ul id="0f2e0e9d-502c-404b-881a-676eddd142df" class="bulleted-list"><li>This is a great learning recipe and really fun to make with other people - there&#x27;s no set quantities and requires some going off of how the dough feels</li></ul><h3 id="03dd8a1f-8a54-4c0b-9f17-23879905d855" class="">Chicken Pot Pie</h3><p id="98d5004c-bce5-4715-8a4d-a9770f39a0ad" class=""><a href="https://youtu.be/IbgpNZfi6Xo">Recipe - Adam Ragusea</a></p><div id="fb264c41-a9d5-463a-ac17-c5d8c5e0ac1a" class="column-list"><div id="c1736359-d8a8-4d44-9162-8b2741797053" style="width:50%" class="column"><figure id="c0f60cab-2875-4b37-a799-3a57134890cb" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1097.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1097.jpg"/></a></figure></div><div id="f15aa6ff-f408-45d1-ab4c-8a4d96efa7b6" style="width:50%" class="column"><figure id="3e52c053-87b8-49aa-b6a6-d037efce06ae" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1098.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1098.jpg"/></a></figure></div></div><ul id="5f05186a-a3cf-4d42-8a1e-291862e48108" class="bulleted-list"><li>The best dish I&#x27;ve made - in the words of Adam Ragusea: &quot;It tastes like a hug on a plate&quot;</li></ul><ul id="f1f27633-0486-4b2f-ba21-9e7149168694" class="bulleted-list"><li>It was a really fun time since I made it with my brother and his girlfriend - I really appreciate dishes that have you do tasks simultaneously and let you delegate to other people</li></ul><ul id="f827e2a0-ea6d-454b-a949-95d17d7d0ab3" class="bulleted-list"><li>This dish is so freaking versatile - it&#x27;s just pastry, chicken, veggies and béchamel sauce  so 2/4 of the dish can be made from leftovers or stuff that&#x27;s frozen</li></ul><ul id="b7c8792c-6204-4065-b159-df878b37515c" class="bulleted-list"><li>I can&#x27;t say anything that uses ~2 cups of butter is healthy but the veggies turn so soft it&#x27;s like they&#x27;re not even there</li></ul><ul id="30248d08-3717-4c34-a280-414718226cad" class="bulleted-list"><li>A dish worth burning your mouth for, which I did twice over</li></ul><h3 id="9e36c9df-bd80-4169-a849-423dea586280" class="">Shakshuka</h3><p id="7e4a9c28-c830-4d42-b540-8e4ec52a2023" class=""><a href="https://www.youtube.com/watch?v=LV0FfKc2s6k">Recipe - Alex (French Guy Cooking)</a></p><div id="779eaac3-ce13-4b00-a35d-dec6cde3f12b" class="column-list"><div id="0f96f496-58b2-44ff-a85b-22f757183524" style="width:50%" class="column"><figure id="9af92448-568f-4d7e-9a28-f8071d56b2b7" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0256.jpg"><img style="width:764px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0256.jpg"/></a></figure><p id="86466853-2845-4f4a-95d7-16c13b71a33d" class="">
+</p></div><div id="33808138-8bf0-40a4-a1e9-c8100c190ea5" style="width:50%" class="column"><ul id="2267bbed-bfe2-4507-aec6-a0bf40ae477a" class="bulleted-list"><li>Made this with 2 friends, it&#x27;s a really fun coop dish with lots of stuff to do async</li></ul><ul id="cb23f0a6-fbd8-4489-8587-6cc72972673f" class="bulleted-list"><li>we deviated from the recipe a lot - just understand that its meat/sausage, tomato sauce with an onion and garlic base, assorted peppers with an egg on top that tastes absolutely fire</li></ul><ul id="3a2d7085-dcde-41de-81b5-2b14aaf5188f" class="bulleted-list"><li>The harissa (chili pepper sauce on the side) was way better than the sum of its parts - I&#x27;d make it with other dishes if I had peppers at home (which I often don&#x27;t)</li></ul><p id="c2f29189-e547-4d0e-8977-b5a6c8e01a6e" class="">
+</p></div></div><h3 id="03f8b104-f206-44b7-932a-547278be2073" class="">Pizza</h3><p id="531efafc-bb3c-4563-b44e-4334a60a2414" class=""><a href="https://youtu.be/SDpCzJw2xm4">Recipe - Adam Ragusea</a></p><div id="c305cbb2-a5e3-4dc4-8d2d-4115bd60ec27" class="column-list"><div id="60fadedf-e1b5-4090-9792-0dd826014260" style="width:33.33333333333333%" class="column"><figure id="850f755b-1004-4cf8-8ac9-4775570b6770" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0955.jpeg"><img style="width:240px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0955.jpeg"/></a></figure><p id="09bfccac-57e8-4098-b277-e04dd6556147" class="">
+</p></div><div id="6b05a8cd-d6d2-409d-b616-0b7e1db89506" style="width:33.33333333333334%" class="column"><figure id="05423ac1-d534-4c41-9004-8c0a82d2f89a" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0807.jpeg"><img style="width:240px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0807.jpeg"/></a></figure></div><div id="e0a6ba82-b4a7-4020-b786-ec0762f4cb4a" style="width:33.333333333333336%" class="column"><figure id="4d240f2e-3144-4e3a-af02-31bfc285dd87" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0935.jpeg"><img style="width:240px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0935.jpeg"/></a></figure><p id="fb7d5b75-7cde-4629-8212-990384184aa2" class="">
+</p></div></div><ul id="d0681721-84be-4cf2-bf96-197e266ad150" class="bulleted-list"><li>I really advocate for leaving the dough in the fridge for a few days - it&#x27;ll take better and bake up crispier + also try to shred your cheese fresh and leave it in the fridge until the last second</li></ul><ul id="a80bfb7b-8e24-48a1-986a-968f6f70b3a6" class="bulleted-list"><li>Low-moisture mozz and uncooked San Marisano tomato sauce may be authentic new york style but I like a heartier pizza so I added toppings and however much sauce felt right, even using butter chicken sauce when I didnt have any canned pizza sauce left</li></ul><ul id="0307ffc2-9d0c-498d-a542-65ed1443d668" class="bulleted-list"><li>Pizza is the food of the ninja turtles don&#x27;t let anyone gatekeep pizza making by convincing you the only way to do it one way - you don&#x27;t even need a pizza stone/steel/peel - I spread the dough out on a pizza tray (without tossing! the oblong pizzas have more character!) and baked it at 400 degrees C until crispy on the bottom (for me about 20-25 mins. but your oven will be different)</li></ul><h3 id="c4eb4006-eb9d-4ef6-8c3d-daddd0a916db" class="">Pizza Bread</h3><p id="a35e09e7-2fa4-46ef-805e-c1d6ac4759e4" class=""><a href="https://www.youtube.com/watch?v=o4ABOKdHEUs">Recipe - Adam Ragusea</a></p><p id="db29b8ae-1c0e-4019-9cda-5a079604021f" class=""></p><iframe width="560" height="315" src="https://www.youtube.com/embed/hz9VEqFw0RY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p><div id="7fb4899e-a022-4ea6-820a-0ac48f763493" class="column-list"><div id="991ea032-8275-47df-9958-f40827a70050" style="width:50%" class="column"><figure id="d708b38c-7d7b-4f4e-a646-291c7c40ec08" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0681.jpg"><img style="width:384px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0681.jpg"/></a></figure></div><div id="492b86f7-39f0-4645-a76c-e384e3bdd514" style="width:50%" class="column"><ul id="35b91c38-79b4-46a7-89ed-2c94c1bc24ff" class="bulleted-list"><li>Adam is a wild chef who takes his pizza dough, lets it age in the fridge for 7 days, puts salt, pepper, and garlic powder on it and it makes the most insane bread</li></ul><ul id="5b39fdb6-30b2-4d3b-84bc-808962fcecdf" class="bulleted-list"><li>It tastes like a sourdough breadstick if you do it right</li></ul><ul id="9ba8a972-4d6a-4831-87ef-a8dd7ffebafb" class="bulleted-list"><li>I recommend slicing and dipping in some sort of tomato/ chili pepper sauce</li></ul></div></div><h3 id="aead9888-91fe-48f3-a487-afa99c49db79" class="">Egg Tarts</h3><p id="03a1e79f-3df5-44b1-b8c4-ad8f3b8f43de" class=""><a href="https://youtu.be/F2ENkOF3fMQ">Recipe - Binging with Babish</a></p><figure id="b2e3cd4a-ec74-4866-a40d-3792c8898382" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/egg.jpg"><img style="width:528px" src="Cooking%20a3cd107604004f659686f4261e24dd36/egg.jpg"/></a></figure><ul id="6d544bcc-949a-48ca-9964-6b4fdfdcd40d" class="bulleted-list"><li>Better than any Chinese bakery in Toronto - I&#x27;m a fanatic for those 5 for $2 tarts 🤩</li></ul><ul id="4173c335-ccba-49f0-9a19-9d70c73504f7" class="bulleted-list"><li>The outside feels like a crumbly sugar cookie and the inside is like custard but more egg-y</li></ul><ul id="8cc0a0ee-3cbb-4b87-ac4f-df995c55895e" class="bulleted-list"><li>Making the pastry dough in a food processor feels like a hack, like it shouldn&#x27;t be this easy</li></ul><ul id="ccef02fc-512b-43f2-a92e-48b0363e66ed" class="bulleted-list"><li>They&#x27;re best right out of the oven, be sure to reheat them if you have leftovers since the filling kind of separates if you eat them cold (still tastes great)</li></ul><h3 id="71365731-5edf-42d9-91b7-0186215d5bd4" class="">Chocolate Chip Cookies</h3><p id="96820690-4d9c-43c1-8bc4-d41f4d7575d5" class=""><a href="https://youtu.be/rEdl2Uetpvo">Recipe - Tasty</a></p><p id="9116e41a-7b32-4a41-ab96-5e89eee72259" class=""><iframe width="560" height="315" src="https://www.youtube.com/embed/7Kfy9JWpVAY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p><ul id="a4155f31-4d39-4dc0-80ce-c55637c7b06b" class="bulleted-list"><li>Really buttery, I&#x27;d add less the next time I make them but my mom didn&#x27;t use a lot of butter in our food growing up so your taste might be different</li></ul><ul id="b385be99-6a61-4bdf-9114-4382dc0166e7" class="bulleted-list"><li>Other than than, no complaints - they&#x27;re soft and chewy/cakey rather than crispy like boxed cookies which I like</li></ul><ul id="9a324b04-0513-440a-aca2-12bb291a577c" class="bulleted-list"><li>Brown butter is definitely one of the top 5 smells in the world</li></ul><h3 id="33eec476-8ccd-4f23-894a-e848e326f77f" class="">Aglio e Olio (Fresh Pasta Pt. 2)</h3><p id="42ff99d2-50ae-40fb-9ab2-f68cdc04258a" class=""><a href="https://youtu.be/bJUiWdM__Qw">Recipe - Binging with Babish</a></p><div id="bd85dc6e-7153-4f7c-ae12-b0d024dae312" class="column-list"><div id="5e56dd3f-3f74-4292-afe6-a88f030bde7d" style="width:50%" class="column"><figure id="5ec4857e-bb9b-41db-8b0d-04ad2a543693" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0789.jpeg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0789.jpeg"/></a></figure></div><div id="017ffd3b-c2c3-41f2-8de3-e379843de5e9" style="width:50%" class="column"><figure id="bb690d55-4869-4db4-aba4-09e253dc2d52" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0785.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0785.jpg"/></a></figure></div></div><ul id="2c6e0217-3c75-4376-a2eb-f81515ca6801" class="bulleted-list"><li>This dish is the definition of being more than the sum of its parts - it should be illegal for something with only 6 ingredients to be this good even if you&#x27;re not using fresh pasta<ul id="b74fe07a-8683-4762-b19a-f55b05c756d4" class="bulleted-list"><li>The secret is probably toasting garlic and chili flakes in olive oil but even the parsley and lemon feel like they add so much, not to mention salt and pepper - I tasted it at intermediate stages and nothing really compared to the end product</li></ul></li></ul><ul id="4a216ac1-e54a-4436-8094-39c84136b39d" class="bulleted-list"><li>I added tomatoes because I added too much olive oil and wanted to cut the richness with sweetness and acidity</li></ul><ul id="491489a0-7e50-4b0c-96d2-1f27c43c4e98" class="bulleted-list"><li>Rolling out fresh pasta is a pain - imagine rolling something out only to have it spring back 80% of the way 🤦‍♂️</li></ul><h3 id="d7ba6a6c-2b27-4afc-ac68-2c1e6e979fca" class="">Spaghetti and Meatballs</h3><p id="f46728fd-2da7-45ba-a923-77d132866b0a" class=""><a href="https://youtu.be/v09TQk4Wu8g">Recipe - Adam Ragusea</a></p><div id="fe0fe37f-3ade-488c-88c0-05f391655c93" class="column-list"><div id="ef28b02d-af69-4611-8ab5-f48340658a44" style="width:50%" class="column"><figure id="ea06766a-304e-4976-9847-14cf4c3154f8" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1121.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1121.jpg"/></a></figure></div><div id="9f31f0da-643c-4f25-aee5-168acf589a78" style="width:50%" class="column"><figure id="27dec41f-8f34-4432-97c9-e6d90fb479e0" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1120.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1120.jpg"/></a></figure></div></div><ul id="0c5c1e93-be71-47d4-8400-c5771a39ff4c" class="bulleted-list"><li>I can&#x27;t especially rave about this dish because there&#x27;s pretty much nothing special about spaghetti and meatballs other than that it just works - I&#x27;d make this once every week (or 2 because it&#x27;s just meat and carbs) and be satisfied </li></ul><ul id="aa3e6420-5f5f-42d9-afca-5e2a17cb717e" class="bulleted-list"><li>Soaking breadcrumbs in milk and adding that to the meat is a game-changer, 10x better with than without </li></ul><h3 id="04b35097-576a-43a3-983e-fe6907175176" class="">&quot;Sloppy&quot; Gyros</h3><p id="b976686b-7e88-463c-b2e6-66ff1657522c" class=""><a href="https://youtu.be/euEkn7gBmyk">Recipe - Adam Ragusea</a></p><div id="12f20dd6-0b21-4ec5-a24c-ff322c32fe53" class="column-list"><div id="9dc6aad8-df0a-4a27-85d3-40fdf34929b3" style="width:50%" class="column"><figure id="d99d02ba-dc12-44fa-8e3f-7829959b8a57" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1072.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1072.jpg"/></a></figure></div><div id="5630d8e1-66ce-4a53-88a7-272f11737aee" style="width:50%" class="column"><figure id="3582b88e-36bc-4b0f-989d-08671d1f611f" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1071.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1071.jpg"/></a></figure></div></div><ul id="a9c81eac-27e9-40c6-96a6-e1dd2b5b2cd6" class="bulleted-list"><li>I subbed lamb for lean beef and the end product was more pebbly than sloppy - probably because lamb has more fat and I overcooked it a little</li></ul><ul id="c7528f94-9770-45e1-9197-5ba28338e5b2" class="bulleted-list"><li>Tasted great although it wasn&#x27;t very gyro-like - I still admire the idea of getting gyro flavour without the same shaved meat form factor </li></ul><ul id="22e16e58-913c-4ca8-b462-c5ec204abecb" class="bulleted-list"><li>I subbed white wine for white vinegar and water, not sure if there&#x27;s a difference</li></ul><h3 id="903fc379-476e-4a54-ace4-3f2df5e2ebb9" class="">Apple Galette (Pie)</h3><p id="0eb0fcef-f9cf-44e5-8901-1c8dd40a535c" class=""><a href="https://youtu.be/x_eQ1sieEyE">Recipe - Adam Ragusea</a></p><div id="c7d3f8d5-ced2-43e7-ba13-eaa17f6f5527" class="column-list"><div id="76b17290-2a1f-46a3-abd4-d12845572b51" style="width:50%" class="column"><figure id="a2577730-f657-4838-899c-bece75d74ba2" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1024.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1024.jpg"/></a></figure></div><div id="4b0f5b85-4505-4e12-8ff5-8d93c14accf8" style="width:50%" class="column"><figure id="335ebfd1-fecb-4fbc-b64f-300a228f9375" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1028.jpg"><img style="width:3024px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_1028.jpg"/></a></figure></div></div><ul id="76c82da8-c190-4279-a8ac-9f0fbafb5f88" class="bulleted-list"><li>This is apple pie but with a little less crust and easier to make</li></ul><ul id="e5a0952d-8ed0-4587-85d7-b135759bb6f5" class="bulleted-list"><li>The original recipe uses strawberries but I didn&#x27;t have those - use what you have and improvise ex. I looked up an apple pie recipe and made the filling based on that while making the pastry as it was shown in the galette video</li></ul><ul id="b23dcb43-20ec-41e4-8afd-112406393e51" class="bulleted-list"><li>It&#x27;s apple pie what can I say - it smelled like America and tasted like freedom /s</li></ul><h3 id="e7d6e1f1-46aa-4315-9168-3d6f9d7e2473" class="">Pineapple Cake</h3><p id="662b25ad-34a3-44f7-a05c-0e0f61139119" class=""><a href="https://youtu.be/c-BPqUMbM60">Recipe - Yummyyy y</a></p><div id="ec20fc9c-f261-4664-b33d-2842c9e17d1c" class="column-list"><div id="0b560b33-482e-4ccb-b8d2-47c550faaad6" style="width:50%" class="column"><figure id="bec49d3a-747b-4d8e-9e9e-f8e9e42b1d3b" class="image"><a href="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0868.jpeg"><img style="width:336px" src="Cooking%20a3cd107604004f659686f4261e24dd36/IMG_0868.jpeg"/></a></figure><p id="d00afb34-76e9-4e6a-93ac-76351fc90740" class="">
+</p></div><div id="34e5274a-67b7-4594-b445-8d3a317710e2" style="width:50%" class="column"><ul id="2cac469a-c75b-4ec9-9457-d4ca74abfd9c" class="bulleted-list"><li>Honestly this is just vanilla sponge with canned pineapple juice in the layers and fruit on top - I don&#x27;t know how it works so well together</li></ul><ul id="7ae09168-3862-40c3-b900-bd94a4d9c93f" class="bulleted-list"><li>Made this for my uncle&#x27;s birthday - apparently pineapple cake with whipped cream was my parents&#x27; wedding cake in Pakistan so the whole family really liked it</li></ul><p id="fa612794-f82f-48d5-9a3f-d73ef8a134f1" class="">
+</p></div></div><hr id="d2649383-9566-45ef-87cc-1c0bf20b980d"/><p id="2ab3676e-e606-4484-b8d0-ee0ab0d05a6b" class="">Thanks for reading! Let me know if you have any questions via email at aliaadil2002@gmail.com - I&#x27;d be happy to help!</p><p id="5d80f0b4-12d7-42dd-994f-cb3d58f33811" class="">And if you found this particularly useful, consider <a href="https://www.buymeacoffee.com/aadillpickle">buying me a coffee</a> ☕️.</p></div></article></body></html>
