@@ -1,0 +1,634 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Every thought about personal finance I&#x27;ve ever had, as concisely as possible</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+</style></head><body><article id="1a0843d1-d414-49c0-ba5e-91bc3ee4aaf2" class="page sans"><header><h1 class="page-title">Every thought about personal finance I&#x27;ve ever had, as concisely as possible</h1></header><div class="page-body"><nav id="63540a58-887b-43a8-802f-008032cf227a" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f7ffa1c1-d40e-4aac-9101-563cb5c43efd">1. Before you even think about investing, start with the personal finance fundamentals</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7c5be926-1109-48eb-8caf-7d8768f42a8e">2. When you should (and shouldn&#x27;t) buy things</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2e2f2deb-32bc-4e8d-be04-8a43469e6060">3. Legal tax evasion strategies</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#93a74cf1-8c77-4182-9946-e91424039ed0">4. <strong>Investing the 80/20 way</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bb0a9476-8011-49e8-9941-25daf83f7d51">5. <strong>My tech stack (aka the section with my referral codes)</strong></a></div></nav><p id="96dbe6a8-0b25-43a2-88b6-ca4688f23134" class=""><em>NOTE: LITERALLY ZERO OF THIS IS FINANCIAL ADVICE!!! DO YOUR OWN RESEARCH!!!</em></p><h3 id="f7ffa1c1-d40e-4aac-9101-563cb5c43efd" class="">1. Before you even think about investing, start with the personal finance fundamentals</h3><ol id="636ca7eb-6ddd-4d2a-96ee-02cfda1b58ac" class="numbered-list" start="1"><li>Pay down any debts greater than 7% per year (7% is the average yearly return for the stock market)<ul id="a08592f8-ef0a-4b25-ae93-4cb5bd4f0e54" class="bulleted-list"><li>Don&#x27;t even think about investing until you do this, not being charged 15% a year in interest and penalties on credit card debt gives you a 2x higher return than the average investor</li></ul></li></ol><ol id="338f55be-2d71-474c-9360-54ee494b18e1" class="numbered-list" start="2"><li>If you have the space, buy products you&#x27;re guaranteed to use in bulk on sale<ul id="3b530a5d-4653-4853-983a-ccb62d628437" class="bulleted-list"><li>Buying years supply of toilet paper on sale at $100 instead of $200 means a 100% rate of return - 14x the average investor</li></ul></li></ol><ol id="d22a6401-3bc3-4754-be17-d40a2fba6213" class="numbered-list" start="3"><li>Reconsider your spending habits (i.e. cut up your credit cards, return things you don&#x27;t need, uninstall the amazon app and <a href="https://getcoldturkey.com/">block all the online shopping websites</a>)<ul id="e74e9c24-39de-43cf-878a-e8fb7716f238" class="bulleted-list"><li>The reason you don&#x27;t have money might not be because you&#x27;re losing it to inflation, it&#x27;s because you&#x27;re losing it to $4 cups of coffee <ul id="844e56f6-5a8c-40a2-b980-b06ece4f69c4" class="bulleted-list"><li>In fact, you&#x27;re probably losing ~$1000 a year - if you invested that, you could have ~$650K in 40 years:<figure id="4f73cb39-38e2-423e-9c4e-714ef03e4350" class="image"><a href="Every%20thought%20about%20finance%20I&#x27;ve%20ever%20had,%20as%20conc%204f73cb3938e2423e9c4e714ef03e4350/pfin.png"><img style="width:1393px" src="Every%20thought%20about%20finance%20I&#x27;ve%20ever%20had,%20as%20conc%204f73cb3938e2423e9c4e714ef03e4350/pfin.png"/></a></figure></li></ul><p id="7e8c6963-80fd-4c42-815c-66001511c962" class="">
+</p></li></ul></li></ol><h3 id="7c5be926-1109-48eb-8caf-7d8768f42a8e" class="">2. When you should (and shouldn&#x27;t) buy things</h3><p id="0c7ad9de-777a-444b-a703-e2fd64c6a748" class="">Buy things if they:</p><ol id="fb66b42a-e007-4f54-92ee-0125704a9790" class="numbered-list" start="1"><li>Spark joy, especially when buying for someone else — the emotional ROI of gift-giving is off the charts.</li></ol><ol id="61953c5a-f373-460a-8c86-a1df20760a17" class="numbered-list" start="2"><li>Get used everyday (Ex. Nice pants, laptop and phone).</li></ol><ol id="38edd8a2-4d00-455e-90c4-351dfb0e2b8b" class="numbered-list" start="3"><li>Come in between you and the ground (Ex. Mattresses, chairs, winter tires).</li></ol><ol id="dce98e87-6a65-4304-994a-fbaf12c1e596" class="numbered-list" start="4"><li>Make your life &gt;1% easier (Ex. Good cookware/knives, tools, software).</li></ol><ol id="d6357926-602c-4450-aad9-c53bee4d4845" class="numbered-list" start="5"><li>Make you better (Ex. Education, gym memberships, travel).</li></ol><p id="dccfbf19-9ddc-4278-b1e6-b8dfa92d77b8" class="">Don&#x27;t buy things if:</p><ol id="2bb2a4df-bd52-4d81-bb3d-4f34d2a515fd" class="numbered-list" start="1"><li>You pretty much already own them (Ex. The newest iPhone if you have the last gen already, anything limited edition that won&#x27;t appreciate in value, cars unless somethings wrong with them).</li></ol><ol id="e14026b6-6d57-439c-baef-b19bf5115bc9" class="numbered-list" start="2"><li>They&#x27;re &quot;on sale&quot; — by all means try to get a good deal but sometimes products &quot;on sale&quot; were the same price last month and you just didn&#x27;t see it, use a price tracker like <a href="https://camelcamelcamel.com/">camelcamelcamel.com</a> to avoid this and make sure you&#x27;re actually getting a good deal for something you will actually use. Marketing people get paid millions to make you buy things you don&#x27;t need with money you don&#x27;t have - outsmart them.</li></ol><ol id="2a9c7b05-6a47-4be0-a8ff-e642252f11d6" class="numbered-list" start="3"><li>They&#x27;re cheap — inexpensive and cheap mean 2 different things here but generally look for quality items with lifetime warranties, 1 coat that costs $1000 but lasts 30 years has better ROI than buying a $100 coat every other year. Plus it&#x27;s less mental strain since you don&#x27;t have to think about replacing it and you&#x27;ll get to use something you actually like.</li></ol><ol id="37763a48-4232-460c-86f0-87dcb651fea1" class="numbered-list" start="4"><li>They&#x27;re heavily advertised to you — more money spent on marketing means a higher price for you since you&#x27;re not just paying for the product but the salaries of the people hired to sell/advertise it to you.</li></ol><ol id="f7b4a249-f8bd-4ae4-8fb2-2329bd1b01b6" class="numbered-list" start="5"><li>You can&#x27;t afford it! Treat your credit card like a debit card and even then make sure it doesn&#x27;t dip below an uncomfortable balance.</li></ol><h3 id="2e2f2deb-32bc-4e8d-be04-8a43469e6060" class="">3. Legal tax evasion strategies</h3><p id="31a30907-dbb4-4d92-a98f-4adcdc753115" class="">There are a few ways to legally pay less taxes that the average joe usually isn&#x27;t aware of. </p><p id="0dff2cad-cfef-4b44-9f44-8577b867fd68" class="">If you have a company, incorporated or not, you can write off lots of things as business expenses like transportation, buying new equipment or rent for co-working spaces. It&#x27;s also not that hard to start a company — if you&#x27;re a freelancer, call yourself a consultant and start a &quot;consulting firm&quot; or start an e-commerce store and call yourself a sole-proprieter. Then you can hire a family member, deduct home office expenses and even if you lose money operating the business, you&#x27;ll save money on taxes. </p><p id="3b719889-6616-4458-94ca-655d168fe3d5" class="">Investing in your government&#x27;s version of a retirement savings plan is tax deductible against your personal income. So are losses from the stock market. So is charitable giving!</p><p id="62423246-e396-4a48-a5de-a2435a7b19e6" class="">Always try to max out tax free investment accounts/retirement accounts — even if you think it&#x27;s not worth it the taxes breaks alone mean you come out ahead, even better if your employer matches your contributions. And at the very least, not being able to withdraw for a few decades means you&#x27;ll be in it for the long run and the market always goes up in the long run.</p><h3 id="93a74cf1-8c77-4182-9946-e91424039ed0" class="">4. <strong>Investing the 80/20 way</strong></h3><p id="05897fe9-4a0e-47d4-8df2-cd910fe40f75" class="">For traditional investing, I try to maximize output and minimize effort. I only use 1 app: Wealthsimple Trade. </p><p id="919727c6-9844-4e45-9aaf-173cb2c3689c" class="">Wealthsimple Trade is like a broker — they let you buy stocks, ETFs, mutual funds, etc., all with $0 fees. They make money from charging a 1.5% currency conversion fee — you can only hold CAD in your account but have to buy US equities with USD and when you sell holdings in USD your balance is credited with CAD. $0 fees are not typical for a brokerage but the currency exchange fees are a killer so I try to only buy Canadian equities. Sometimes I can&#x27;t resist and I&#x27;ll run a YOLO on GME - this is more common than I&#x27;d like to admit.</p><p id="7e8e6cea-f361-4f75-a152-6d6b4970d33f" class="">
+</p><p id="6dc5cb83-3b1e-410c-b972-d95b9797fc56" class="">Since I&#x27;m young, have a job, live at home and can take lots of financial risk, my net worth is divided up roughly as follows (in order of volatility):</p><ul id="467c8446-9ec7-43ad-8b1f-1791cdd43b52" class="bulleted-list"><li>35.5% virtual NBA trading cards</li></ul><ul id="bf81caae-aa42-4c95-a52c-5b3ddf5d07f8" class="bulleted-list"><li>1% Cryptocurrency</li></ul><ul id="8b770356-e3fd-4fb1-ad38-bc3c816dc0d9" class="bulleted-list"><li>33.3% individual stocks I picked (mostly tech companies, this is basically gambling)</li></ul><ul id="5cdbf0f9-7f1d-472a-92ce-9b2b01f7f923" class="bulleted-list"><li>7.1% tech ETFS (ZQQ, ARKK)</li></ul><ul id="4ce7e8fa-3420-4f06-be9d-3418a842c2fd" class="bulleted-list"><li>21.6% whole market ETFs (VSP.TO, VTI, EEMV)</li></ul><ul id="12e4ffe2-10d1-409e-b40a-cf0726ac9eb5" class="bulleted-list"><li>1.5% cash</li></ul><p id="7108c437-7628-48fa-bb56-c8b962698327" class="">
+</p><p id="b48787d4-7850-4d49-9104-2819465bd622" class="">This portfolio was made when I was young and stupid. I do not recommend this for anyone and am slowly selling off my more risky positions and buying more into whole market ETFs like the S&amp;P 500. I&#x27;m just sharing this for full disclosure since you should know who you&#x27;re in business with while reading this. Do as I say, not as I do. </p><p id="85ba54dd-7531-4a8b-b48d-fd59e655be55" class="">
+</p><p id="ddde7cc2-1ab0-4ced-8353-1fe79f450c38" class="">For most investors under 30 who have a similar financial and risk profile as me but aren&#x27;t as insane, I&#x27;d recommend the following steps:</p><ul id="ecc17c23-5127-4155-99d6-30a736287057" class="bulleted-list"><li>Open up a $0 fee trading account - likely Wealthsimple Trade of Quest Trade in Canada, Robinhood in the States</li></ul><ul id="05d79173-10cf-4145-9713-6bb38ced3c08" class="bulleted-list"><li>Deposit a certain % of your paycheque every time you get it and try to maintain a certain ratio of risky investments to safe ones - consistently depositing $500 every month is way better than $10 000 at one time, <a href="https://www.investopedia.com/terms/d/dollarcostaveraging.asp#:~:text=Dollar%2Dcost%20averaging%20(DCA)%20is%20an%20investment%20strategy%20in,volatility%20on%20the%20overall%20purchase.&amp;text=Dollar%2Dcost%20averaging%20is%20also%20known%20as%20the%20constant%20dollar%20plan.">trust me</a></li></ul><ul id="4df5cac9-c4f4-42ae-8c3e-711a751152fd" class="bulleted-list"><li>I believe inflation is worse than market volatility and the market has always gone up and likely will continue to. For that reason, I recommend the following allocation for your investing money:<ul id="4d3ce485-0523-4605-afe5-c97bacc99497" class="bulleted-list"><li>40% in a whole market fund - something that tracks a lot of high quality stocks and moves in the direction of the entire stock market every day (ex. VRGO, SPY)</li></ul><p id="36533864-3c86-44f4-8bbe-144d15b97ab3" class="">The rest is based on your risk tolerance:</p><ul id="2599b8be-90db-47ad-8ea9-151e9b7b538d" class="toggle"><li><details open=""><summary>Risky (in order of ascending risk): </summary><ul id="6a974d7a-0e47-4fa1-ad6f-226fd0949462" class="bulleted-list"><li>20-30% in a tech sector ETF (I like QQQ/ZQQ, ARKK and ARKW)</li></ul><ul id="24e9d83b-a18d-489a-a7dd-9a8450856b2f" class="bulleted-list"><li>15-20% in individual stocks (this is basically blackjack)</li></ul><ul id="5f3b11bd-9b9f-4ebb-9293-724fea03a1a7" class="bulleted-list"><li>5-10% in cryptocurrency (this is basically roulette)</li></ul><ul id="d8860df2-13af-47d9-816c-dcbe43ecb54e" class="bulleted-list"><li>10-20% in cash</li></ul></details></li></ul><ul id="b9d7004e-e41f-4eda-a330-dbc5d5d13da4" class="toggle"><li><details open=""><summary>Conservative:</summary><ul id="6338a2a9-ded0-4731-ac23-9de34ba326ba" class="bulleted-list"><li>Another 20-40% in in a whole market fund</li></ul><ul id="3d919383-87af-4291-86b0-1e4a6cb790ba" class="bulleted-list"><li> 10-20% in a tech ETF (or pick a more stable industry like banking/energy)</li></ul><ul id="6db6640c-7c77-446b-bd0a-a67883caa04f" class="bulleted-list"><li>10-20% in an ETF tracking bonds</li></ul><ul id="8dc7967e-2184-4ccb-a303-f9f0bf0be1c7" class="bulleted-list"><li>10-20% cash</li></ul><ul id="2e285b82-ee2e-40d1-a547-46ae9a3c3dad" class="bulleted-list"><li>0-5% gold</li></ul></details></li></ul></li></ul><p id="7ca5d98c-014c-4654-8ccc-6e333334b9b8" class="">Some other things to remember:</p><ul id="9225f5e9-eb42-4d81-945f-39e312b14045" class="bulleted-list"><li>Wherever you&#x27;re investing, keep it consistent and comfortable — it&#x27;s better to invest 20% of your salary every month and never withdraw than depositing $10000 sporadically when &quot;you see an opportunity&quot;<ul id="ab8e384c-f4a5-4b48-8075-9041ce3ed137" class="bulleted-list"><li>You&#x27;ll have cash when you need it — if something happens and all your money is tied up in investments, you have to withdraw no matter what → the stock market may always go up in the long run but it fluctuates in the short run, if you need money immediately you may need to sell while you&#x27;re at a loss.</li></ul></li></ul><ul id="1321b660-f49d-4127-9920-56410f7d3fa5" class="bulleted-list"><li>Keep your personal wellbeing above all<ul id="6e47ce6d-42d0-4836-8a06-ab17b09af564" class="bulleted-list"><li>I have a low appetite for risk when it comes to things I don&#x27;t understand — that&#x27;s why I&#x27;ll never trade on margin, trade options or invest more than 40% of my portfolio in one equity, the possibility of losing all my money would keep me up at night and wouldn&#x27;t be worth the potential financial upside.</li></ul><ul id="32700e60-6458-4a6a-a801-8318377ba405" class="bulleted-list"><li>I keep less cash on hand because I don&#x27;t need to buy things very often - you may the opposite in that case your asset allocation will look different from mine - the most important thing is just beating inflation by getting at least 2-4% return (ideally more).</li></ul></li></ul><ul id="6f4d5ce0-26bb-480e-b466-30deb7b0ff0d" class="bulleted-list"><li>Don&#x27;t over-optimize<ul id="29ad34f1-b279-4417-971b-b2c6e3be98e8" class="bulleted-list"><li>The average person doesn&#x27;t need to spend hours researching trading strategies or comparing fees for different investment platforms. Spend that time making more money to invest.</li></ul><ul id="56117fd6-92da-4ee1-91ee-228fd20c3118" class="bulleted-list"><li>Just get your money into an investment account. It&#x27;s literally losing value to inflation by sitting in your 0.00001% annual return savings account or in your mattress.</li></ul><p id="40c8c6c2-92f0-4e72-9bf6-fccbb885f325" class="">
+</p></li></ul><ul id="07c2820c-b3c4-4316-b808-4b5f64405b35" class="bulleted-list"><li>Investing is actually 90% saving and 10% all of the sexy things people normally associate with &quot;investing&quot;. Always make more than you spend.</li></ul><p id="b3363d9e-7eaa-4147-98f2-66c38349b6f6" class="">
+</p><h3 id="bb0a9476-8011-49e8-9941-25daf83f7d51" class="">5. <strong>My tech stack (aka the section with my referral codes)</strong></h3><ol id="368ae0b9-15f6-488c-92ae-093d7beda66e" class="numbered-list" start="1"><li>Wealthsimple Trade: I use this everyday and it powers most of my investments — <a href="https://my.wealthsimple.com/app/public/trade-referral-signup?code=OJCS_A">my referral gives you $10 to invest</a> (after investing $100).</li></ol><ol id="add28728-e360-4118-8ac7-bc60741f1f61" class="numbered-list" start="2"><li>Newton: This is where I buy crypto, best app in Canada - <a href="https://web.newton.co/r/66UJ16">my referral gives you $25</a> (after investing $100).</li></ol><p id="ade3bf41-4968-493c-8fca-59ea303c7ba7" class="">
+</p><p id="a7125418-57fa-4791-8e37-29dd0fbbb3dc" class="">-AA</p><hr id="c2406a8a-6a85-4d4f-85c5-9e057b0c749b"/><p id="ce82f288-c85b-4d43-a343-a6065ffdd874" class=""><em>Thanks for reading! Let me know if you have any questions via twitter </em><em><a href="https://twitter.com/aadillpickle">@aadillpickle</a></em><em> - I&#x27;d be happy to help!</em></p><p id="3a2e7255-b50a-4bb6-a39e-e2de8b1da195" class=""><em>And if you found this tutorial particularly useful, consider </em><em><a href="https://www.buymeacoffee.com/aadillpickle">buying me a coffee</a></em><em> ☕️.</em></p></div></article></body></html>
